@@ -3,7 +3,7 @@ environment = "dev"
 aws_region  = "us-east-1"
 
 # ── Existing Network ──────────────────────────────────────────────────────────
-vpc_id     = "vpc-xxxxxxxxxxxxxxxxx"
+vpc_id = "vpc-xxxxxxxxxxxxxxxxx"
 subnet_ids = [
   "subnet-xxxxxxxxxxxxxxxxx", # AZ-A private
   "subnet-yyyyyyyyyyyyyyyyy", # AZ-B private
@@ -36,10 +36,10 @@ snapshot_retention_limit = 1
 snapshot_window          = "03:00-04:00"
 
 # ── Secrets Manager ───────────────────────────────────────────────────────────
-secret_recovery_window_days = 0   # immediate deletion allowed in dev
+secret_recovery_window_days = 0 # immediate deletion allowed in dev
 
 # ── Tags ──────────────────────────────────────────────────────────────────────
 tags = {
-  Team        = "platform"
-  CostCenter  = "engineering"
+  Team       = "platform"
+  CostCenter = "engineering"
 }

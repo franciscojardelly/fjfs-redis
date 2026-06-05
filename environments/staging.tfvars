@@ -3,7 +3,7 @@ environment = "staging"
 aws_region  = "us-east-1"
 
 # ── Existing Network ──────────────────────────────────────────────────────────
-vpc_id     = "vpc-xxxxxxxxxxxxxxxxx"
+vpc_id = "vpc-xxxxxxxxxxxxxxxxx"
 subnet_ids = [
   "subnet-xxxxxxxxxxxxxxxxx", # AZ-A private
   "subnet-yyyyyyyyyyyyyyyyy", # AZ-B private
@@ -35,6 +35,6 @@ secret_recovery_window_days = 7
 
 # ── Tags ──────────────────────────────────────────────────────────────────────
 tags = {
-  Team        = "platform"
-  CostCenter  = "engineering"
+  Team       = "platform"
+  CostCenter = "engineering"
 }
