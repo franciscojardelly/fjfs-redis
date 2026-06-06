@@ -1,17 +1,17 @@
-project     = "myapp"
+project     = "fjfs-redis"
 environment = "prod"
 aws_region  = "us-east-1"
 
 # ── Existing Network ──────────────────────────────────────────────────────────
-vpc_id = "vpc-xxxxxxxxxxxxxxxxx"
+vpc_id = "vpc-06400873e4e80e8aa"
 subnet_ids = [
-  "subnet-xxxxxxxxxxxxxxxxx", # AZ-A private
-  "subnet-yyyyyyyyyyyyyyyyy", # AZ-B private
-  "subnet-zzzzzzzzzzzzzzzzz", # AZ-C private
+  "subnet-08d77d26695897600", # AZ-A private
+  "subnet-02fea0639de5bff1b", # AZ-B private
+  "subnet-0363a8445db432cb5", # AZ-C private
 ]
 
-allowed_security_group_ids = ["sg-xxxxxxxxxxxxxxxxx"]
-allowed_cidr_blocks        = []
+#allowed_security_group_ids = ["sg-xxxxxxxxxxxxxxxxx"]
+allowed_cidr_blocks        = ["10.0.0.0/16", "192.168.0.0/24"]
 
 # ── Sizing ────────────────────────────────────────────────────────────────────
 # Memory-optimized node with two replicas for read scalability and resilience.
@@ -33,6 +33,9 @@ snapshot_window          = "00:00-01:00"
 
 # ── Secrets Manager ───────────────────────────────────────────────────────────
 secret_recovery_window_days = 7
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+log_retention_days = 90
 
 # ── Tags ──────────────────────────────────────────────────────────────────────
 tags = {

@@ -2,8 +2,8 @@ resource "random_password" "auth_token" {
   length  = 64
   special = true
 
-  # AUTH token restrictions: cannot contain /, @, " or spaces
-  override_special = "!#$%&*()-_=+[]{}?"
+  # ElastiCache AUTH token: only !, &, #, $, ^, <, >, - are permitted as special chars
+  override_special = "!&#$^<>-"
 }
 
 resource "aws_secretsmanager_secret" "auth_token" {

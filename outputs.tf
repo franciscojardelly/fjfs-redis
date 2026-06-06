@@ -52,3 +52,13 @@ output "auth_token_secret_name" {
   description = "Name of the Secrets Manager secret storing the Redis AUTH token."
   value       = aws_secretsmanager_secret.auth_token.name
 }
+
+output "this_slow_log_group_name" {
+  description = "Name of the CloudWatch log group for Redis slow logs."
+  value       = aws_cloudwatch_log_group.redis_slow_log.name
+}
+
+output "this_engine_log_group_name" {
+  description = "Name of the CloudWatch log group for Redis engine logs."
+  value       = aws_cloudwatch_log_group.redis_engine_log.name
+}

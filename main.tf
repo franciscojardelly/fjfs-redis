@@ -46,6 +46,20 @@ resource "aws_elasticache_replication_group" "this" {
   snapshot_retention_limit   = var.snapshot_retention_limit
   snapshot_window            = var.snapshot_window
 
+  log_delivery_configuration {
+    destination      = aws_cloudwatch_log_group.redis_slow_log.name
+    destination_type = "cloudwatch-logs"
+    log_format       = "json"
+    log_type         = "slow-log"
+  }
+
+  log_delivery_configuration {
+    destination      = aws_cloudwatch_log_group.redis_engine_log.name
+    destination_type = "cloudwatch-logs"
+    log_format       = "json"
+    log_type         = "engine-log"
+  }
+
   tags = local.common_tags
 
   depends_on = [aws_secretsmanager_secret_version.auth_token]
